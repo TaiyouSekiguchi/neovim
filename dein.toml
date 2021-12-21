@@ -1,0 +1,17 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'lambdalisue/fern.vim'
+
+[[plugins]]
+repo = 'yuki-yano/fern-preview.vim'
+
+[[plugins]]
+repo = 'lambdalisue/fern-hijack.vim'
+
+[[plugins]]
+repo = 'sirver/ultisnips'
