@@ -94,7 +94,7 @@ noremap <C-k> <C-b>
 
 "　インクリメント、デクリメント
 noremap + <C-a>
-noremap + <C-x>
+noremap - <C-x>
 
 "　ペーストインデント自動化
 nnoremap p ]p
@@ -105,12 +105,22 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
-"　タブ移動
-noremap tj gT
-noremap tk gt
-
-"　新規タブ
+"　タブ
 cnoremap nt tabe
+noremap ]b :tabn<CR>
+noremap [b :tabp<CR>
+
+"　タグ作成
+nnoremap <f5> :!ctags -R -f .tags<CR>
+set tags=.tags;~
+autocmd BufWritePost * call system("ctags -R -f .tags")
+nnoremap ]t <C-]>
+nnoremap [t <C-t>
+
+"　quickfix
+nnoremap <f7> :make<CR>
+nnoremap ]c :cnext<CR>
+nnoremap [c :cprev<CR>
 
 "-------------------my_vimrc-----------------------
 
