@@ -24,13 +24,16 @@ syntax enable
 "End dein Scripts----------------------
 
 "-------------------my_vimrc-------------------------
+
+let mapleader = "\<SPACE>"
+
 " setting
 " 入力中のコマンドをステータスに表示する
 set showcmd
 
 " 見た目系
 " 行番号を表示
-set number
+set relativenumber
 " 現在の行を強調表示
 " set cursorline
 " 行末の1文字先までカーソルを移動できるように
@@ -88,9 +91,10 @@ noremap <S-h> 0
 noremap <S-l> $
 
 "　ページ移動
+noremap <S-j> 7j
+noremap <S-k> 7k
 noremap <C-j> <C-f>
 noremap <C-k> <C-b>
-
 
 "　インクリメント、デクリメント
 noremap + <C-a>
@@ -106,7 +110,7 @@ noremap <Left> <Nop>
 noremap <Right> <Nop>
 
 "　タブ
-cnoremap nt tabe
+nnoremap <Leader>nb :tabe<CR>
 noremap ]b :tabn<CR>
 noremap [b :tabp<CR>
 
@@ -116,11 +120,34 @@ set tags=.tags;~
 autocmd BufWritePost * call system("ctags -R -f .tags")
 nnoremap ]t <C-]>
 nnoremap [t <C-t>
+nnoremap <Leader>vt :vsp<CR> :exe("tjump ".expand('<cword>'))<CR> <C-w>l
 
 "　quickfix
-nnoremap <f7> :make<CR>
-nnoremap ]c :cnext<CR>
-nnoremap [c :cprev<CR>
+nnoremap <f7> :make!<CR>
+nnoremap ]q :cnext<CR>
+nnoremap [q :cprev<CR>
+
+" terminal
+set sh=zsh
+nnoremap @t :tabe<CR>:terminal<CR>
+tnoremap <silent> <ESC> <C-\><C-n>
+tnoremap <silent> jj <C-\><C-n>
+
+" man
+nnoremap <Leader>man <S-k>
+
+" window
+nmap <Leader>w [window]
+noremap [window]h <C-w>h
+noremap [window]j <C-w>j
+noremap [window]k <C-w>k
+noremap [window]l <C-w>l
+noremap [window]q <C-w>q
+noremap [window]v <C-w>v
+
+"　予測変換
+inoremap <C-k> <C-p>
+inoremap <C-j> <C-n>
 
 "-------------------my_vimrc-----------------------
 

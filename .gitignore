@@ -1,4 +1,6 @@
 colors
 plugins
+plugin
 *.c
-
+.tags
+tags
